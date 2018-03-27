@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<h1>Welcome to the Great Number Game!</h1>
+	<p>I am thinking a number between 1 and 100</p> 
+	<p>Take a guess!</p>
+	<div class='{{ session['class'] }}'>
+		<p>{{ session['hint'] }} </p>
+	</div>
+
+	<form action="/proccess" method="post">
+		<input type="text" name="num">
+		<input type="submit" name="submit">
+	</form>
+	<form action="/reset" method="post">
+		<input type="submit" value="Play Again">
+	</form>
+
+</body>
+</html>
